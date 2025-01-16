@@ -1,10 +1,10 @@
 # react-ts-vite-template
 
-- Framwork: React
-- Language: TypeScript
-- Build Tool: Vite
-- Router: React-router-dom
-- State Management: Zustand
+- Framwork: React@18
+- Language: TypeScript@5
+- Build Tool: Vite@6
+- Router: React-router-dom@7
+- State Management: Zustand@5
 
 ## Environment
 
