@@ -19,7 +19,7 @@ axios.interceptors.request.use(
     const token =
       MODE === 'DEVELOPMENT'
         ? (await getMock())?.token
-        : (getStorage('localStorage', 'HTTP_TOKEN') as string);
+        : getStorage<string>('localStorage', 'HTTP_TOKEN');
 
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
