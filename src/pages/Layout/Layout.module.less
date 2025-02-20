@@ -1,15 +1,13 @@
+@import '../../styles/mixins.less';
+
 .layout-container {
-  .layout-header {
-  }
+  .scroll-wrapper();
+  width: 100vw;
+  height: var(--window-height);
 
   .layout-main {
-    .layout-sider {
-    }
-
-    .layout-content {
-    }
-  }
-
-  .layout-footer {
+    .scroll-inner();
+    width: 100vw;
+    min-height: var(--window-height);
   }
 }

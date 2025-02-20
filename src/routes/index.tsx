@@ -15,13 +15,6 @@ export const routes: RouteObject[] = [
           title: '主页',
         },
       },
-      {
-        path: '/user-management',
-        lazy: () => import('../pages/UserManagement/UserManagement'),
-        handle: {
-          title: '用户管理',
-        },
-      },
     ],
   },
   {

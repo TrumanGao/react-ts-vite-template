@@ -1,9 +1,9 @@
 # react-ts-vite-template
 
+- Language: TypeScript
 - Framwork: React@18
-- Language: TypeScript@5
-- Build Tool: Vite@6
 - Router: React-router-dom@7
+- Build Tool: Vite@6
 - State Management: Zustand@5
 
 ## Environment
@@ -22,8 +22,8 @@ npm install
 ## Development
 
 Run with custom arguments.
-Set your configuration in `/src/mock` folder, filename should be `[developer name].ts`.
+Set your configuration in `/src/mock` folder, filename should be `[developer].ts`.
 
 ```bash
-npm start [developer name]
+npm start [developer]
 ```
