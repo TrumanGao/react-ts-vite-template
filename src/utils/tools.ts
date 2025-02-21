@@ -4,7 +4,10 @@ export const getMock = async (): Promise<Mock | null> => {
     return null;
   }
 
-  const mock = (await import(`../mock/${__DEVELOPER__}.ts`)).mock as Mock;
-
-  return mock;
+  try {
+    return (await import(`../mock/${__DEVELOPER__}.ts`)).mock as Mock;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
 };

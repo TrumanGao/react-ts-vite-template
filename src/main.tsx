@@ -1,10 +1,13 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { getDeviceType } from 'trumangao-utils';
 import { MODE } from './constants/config.ts';
-import './index.css';
+import './styles/base.less';
+import './styles/vars.less';
+import './styles/antd/index.less';
 import App from './App.tsx';
 
-if (MODE !== 'PRODUCTION') {
+if (MODE !== 'PRODUCTION' && getDeviceType() !== 'desktop') {
   import('vconsole')
     .then(({ default: VConsole }) => {
       new VConsole();

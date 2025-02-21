@@ -6,7 +6,7 @@ stages:
 
 build-testing:
   stage: build
-  image: yfd_nodejs_ct8:20.5.0
+  image: node:20.18.3
   variables:
     MODE: testing
   script:
@@ -22,7 +22,7 @@ build-testing:
 
 build-production:
   stage: build
-  image: yfd_nodejs_ct8:20.5.0
+  image: node:20.18.3
   variables:
     MODE: production
   only:
