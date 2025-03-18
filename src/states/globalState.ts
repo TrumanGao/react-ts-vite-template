@@ -16,6 +16,17 @@ export interface globalSlice {
     innerHeight: number;
   };
   updateWindowSize: (size: { innerWidth: number; innerHeight: number }) => void;
+  /**
+   * 容器尺寸
+   */
+  containerSize: {
+    width: number;
+    height: number;
+  };
+  /**
+   * 设置容器尺寸
+   */
+  updateContainerSize: (size: { width: number; height: number }) => void;
 }
 
 export const createGlobalSlice: StateCreator<
@@ -38,6 +49,7 @@ export const createGlobalSlice: StateCreator<
   updateScreenOrientation(orientation) {
     set((state) => {
       state.screenOrientation = orientation;
+      console.log('globalState - updateScreenOrientation: ', orientation);
       return state;
     });
   },
@@ -48,6 +60,18 @@ export const createGlobalSlice: StateCreator<
   updateWindowSize(size) {
     set((state) => {
       state.windowSize = size;
+      console.log('globalState - updateWindowSize: ', size);
+      return state;
+    });
+  },
+  containerSize: {
+    width: 0,
+    height: 0,
+  },
+  updateContainerSize(size) {
+    set((state) => {
+      state.containerSize = size;
+      console.log('globalState - updateContainerSize: ', size);
       return state;
     });
   },

@@ -12,6 +12,8 @@ export interface ResponseData<D = unknown> {
 }
 
 axios.defaults.timeout = 20000;
+axios.defaults.headers.post['Content-Type'] =
+  'application/x-www-form-urlencoded';
 axios.defaults.baseURL = HTTP_BASEURL;
 
 axios.interceptors.request.use(

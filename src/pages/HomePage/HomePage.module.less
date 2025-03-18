@@ -1,9 +1,25 @@
+@import '../../styles/mixins.less';
+
 .home-container {
+  background-color: seashell;
   .home-header {
   }
 
   .home-main {
     .home-content {
+      .home-welcome-btn {
+        .button();
+        .flex-center();
+        width: 100px;
+        height: 40px;
+        border-radius: 8px;
+        border: 1px solid #000;
+        .btn-icon {
+          color: green;
+          font-size: 20px;
+          margin-left: 8px;
+        }
+      }
     }
   }
 }
