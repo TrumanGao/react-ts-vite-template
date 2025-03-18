@@ -1,6 +1,7 @@
 import { useSize } from '@/hooks/useSize';
 import { useMyMessage } from '@/hooks/useMyMessage';
 import { useAppStore } from '@/states';
+import { IconFont } from '@/components/IconFont/IconFont';
 import styles from './HomePage.module.less';
 
 export function Component() {
@@ -33,6 +34,7 @@ export function Component() {
         <div className={styles['home-content']}>
           <div className={styles['home-welcome-btn']} onClick={handleWelcome}>
             欢迎
+            <IconFont href="icon-check-circle" className={styles['btn-icon']} />
           </div>
         </div>
       </div>
