@@ -1,4 +1,3 @@
-// https://shimo.zhenguanyu.com/docs/AZlp79EvWJYNF1Yv
 import { type AxiosResponse } from 'axios';
 import { _axios, ResponseData } from '.';
 
