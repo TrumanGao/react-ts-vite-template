@@ -1,4 +1,4 @@
 export const mock: Mock = {
-  name: 'gfx',
+  name: 'default',
   ticket_token: '',
 };

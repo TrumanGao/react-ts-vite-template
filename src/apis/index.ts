@@ -20,7 +20,7 @@ axios.interceptors.request.use(
   async (config) => {
     const token =
       MODE === 'DEVELOPMENT'
-        ? (await getMock())?.token
+        ? (await getMock())?.ticket_token
         : getStorage<string>('localStorage', 'HTTP_TOKEN');
 
     if (token) {

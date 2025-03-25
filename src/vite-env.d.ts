@@ -1,9 +1,10 @@
 /// <reference types="vite/client" />
 
-declare const __DEVELOPER__: string;
+declare const __DEVELOPER__: string | undefined;
 
 declare interface Mock {
-  token?: string;
+  name: string;
+  ticket_token?: string;
 }
 
 declare interface UserInfo {
