@@ -5,6 +5,5 @@ import { baseUserConfig } from './vite.config';
 export default defineConfig({
   ...baseUserConfig,
   mode: 'TESTING',
-  define: {},
   base: './',
 });

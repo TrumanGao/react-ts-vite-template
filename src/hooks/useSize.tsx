@@ -56,7 +56,7 @@ export function useSize(
   useEffect(() => {
     // 1. 处理屏幕尺寸变化
     const throttledResize = throttle(() => {
-      console.log('useSize - resize事件: ', {
+      console.log('useSize - resize: ', {
         innerWidth: window.innerWidth,
         innerHeight: window.innerHeight,
       });
@@ -80,7 +80,7 @@ export function useSize(
     eventManager.addEventListener(
       'change',
       () => {
-        console.log('useSize - change事件: ', screen.orientation);
+        console.log('useSize - change: ', screen.orientation);
         updateScreenOrientation(screen.orientation);
       },
       'window_change_handleChange',
@@ -89,7 +89,7 @@ export function useSize(
     eventManager.addEventListener(
       'orientationchange',
       () => {
-        console.log('useSize - orientationchange事件: ', screen.orientation);
+        console.log('useSize - orientationchange: ', screen.orientation);
         updateScreenOrientation(screen.orientation);
       },
       'window_orientationchange_handleOrientationchange',
@@ -186,7 +186,7 @@ export function useSize(
 
   useEffect(() => {
     const deviceType = getDeviceType();
-    console.log('useSize - 检测设备类型 deviceType: ', deviceType);
+    console.log('useSize - deviceType: ', deviceType);
     // iphone 6 375 * 667
     // ipad mini 1024 * 768
 

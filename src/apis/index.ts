@@ -1,7 +1,7 @@
 import axios, { type AxiosResponse } from 'axios';
 import { getStorage } from 'trumangao-utils';
 import { Code, CodeMessage } from '@/constants/code';
-import { MODE, HTTP_BASEURL } from '@/constants/config';
+import { MODE } from '@/constants/config';
 import { getMock } from '@/utils/tools';
 
 export interface ResponseData<D = unknown> {
@@ -14,13 +14,12 @@ export interface ResponseData<D = unknown> {
 axios.defaults.timeout = 20000;
 axios.defaults.headers.post['Content-Type'] =
   'application/x-www-form-urlencoded';
-axios.defaults.baseURL = HTTP_BASEURL;
 
 axios.interceptors.request.use(
   async (config) => {
     const token =
       MODE === 'DEVELOPMENT'
-        ? (await getMock())?.token
+        ? (await getMock(MODE))?.ticket_token
         : getStorage<string>('localStorage', 'HTTP_TOKEN');
 
     if (token) {
@@ -42,7 +41,7 @@ axios.interceptors.response.use(
       data.code === Code.PERMISSION_NO_ACCESS ||
       data.code === Code.PERMISSION_NO_SUFFICIENT
     ) {
-      console.error(`【${config.url}】接口：${CodeMessage[data.code]}`);
+      console.error(`【${config.url}】：${CodeMessage[data.code]}`);
     }
 
     return response;

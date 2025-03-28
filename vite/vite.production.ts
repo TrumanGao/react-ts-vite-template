@@ -5,7 +5,6 @@ import { baseUserConfig } from './vite.config';
 export default defineConfig({
   ...baseUserConfig,
   mode: 'PRODUCTION',
-  define: {},
   base: './',
   esbuild: {
     drop: ['debugger'],
