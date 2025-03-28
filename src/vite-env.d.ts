@@ -1,5 +1,7 @@
 /// <reference types="vite/client" />
 
+declare type ModeType = 'DEVELOPMENT' | 'TESTING' | 'PRODUCTION';
+
 declare const __DEVELOPER__: string | undefined;
 
 declare interface Mock {

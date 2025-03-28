@@ -1,12 +1,10 @@
-import { MODE } from '@/constants/config';
-
 /**
- * 仅在开发环境和测试环境下使用
+ * Only used in development and testing environments
  */
-export const getMock = async () => {
+export const getMock = async (mode: ModeType) => {
   let mock: Mock | undefined;
   try {
-    switch (MODE) {
+    switch (mode) {
       case 'DEVELOPMENT':
         if (typeof __DEVELOPER__ !== 'undefined') {
           mock = (await import(`@/mock/${__DEVELOPER__}.ts`)).mock;
@@ -19,7 +17,7 @@ export const getMock = async () => {
         break;
     }
   } catch (error) {
-    console.error('获取 mock 数据失败: ', error);
+    console.error('Error loading mock data: ', error);
   }
 
   return mock;

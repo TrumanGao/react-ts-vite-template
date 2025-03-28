@@ -6,13 +6,13 @@ export const routes: RouteObject[] = [
     element: <Navigate to="/home" replace></Navigate>,
   },
   {
-    lazy: () => import('../pages/Layout/Layout'),
+    lazy: () => import('../pages/HomePage/Layout'),
     children: [
       {
         path: '/home',
-        lazy: () => import('../pages/HomePage/HomePage'),
+        lazy: () => import('../pages/HomePage/HomePage/HomePage'),
         handle: {
-          title: '主页',
+          title: 'home',
         },
       },
     ],
@@ -21,7 +21,7 @@ export const routes: RouteObject[] = [
     path: '*',
     lazy: () => import('../pages/BoundaryPage/BoundaryPage'),
     handle: {
-      title: '页面不存在',
+      title: '404',
     },
   },
 ];

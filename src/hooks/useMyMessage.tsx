@@ -40,7 +40,6 @@ export const useMyMessage = (config?: ConfigOptions) => {
   }
 
   function myMessageDestroy(instance: MessageInstance) {
-    console.log('myMessageDestroy');
     instance?.destroy();
     // 手动移除所有子节点，用于兼容低版本浏览器
     const myMessageEls = document.querySelectorAll('.my-message');

@@ -16,10 +16,10 @@ async function initApp() {
     }
 
     if (MODE !== 'PRODUCTION') {
-      console.log('mock数据: ', await getMock());
+      console.log('Mock data: ', await getMock(MODE));
     }
   } catch (error) {
-    console.error('项目初始化失败: ', error);
+    console.error('Error initializing app:', error);
   } finally {
     createRoot(document.getElementById('root')!).render(
       <StrictMode>
