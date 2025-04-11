@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useSize } from '@/hooks/useSize';
 import { useMyMessage } from '@/hooks/useMyMessage';
 import { useAppStore } from '@/states';
@@ -9,9 +10,20 @@ export function Component() {
   useSize({
     useContainer: true,
   });
-  const { myMessage, myMessageContextHolder } = useMyMessage({
+  const {
+    messageInstance,
+    myMessage,
+    myMessageDestroy,
+    myMessageContextHolder,
+  } = useMyMessage({
     top: windowSize.innerHeight * 0.3,
   });
+
+  useEffect(() => {
+    return () => {
+      myMessageDestroy(messageInstance);
+    };
+  }, []);
 
   function handleWelcome() {
     myMessage({
